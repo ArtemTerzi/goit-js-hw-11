@@ -1,0 +1,45 @@
+.search-form {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background-color: indigo;
+}
+
+.form-thumb {
+  position: relative;
+  display: flex;
+
+  & > input {
+    height: 40px;
+    width: 450px;
+    padding-left: 10px;
+    border: transparent;
+  }
+
+  & > button {
+    position: absolute;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    border: transparent;
+
+    cursor: pointer;
+
+    &:hover {
+      fill: #fff;
+      background-color: #000;
+    }
+  }
+}

@@ -5,12 +5,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page title</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./sass/index.scss" />
   <script type="module" src="./index.js"></script>
 </head>
 
 <body>
+  <main>
+    <form class="search-form" id="search-form">
+      <div class="form-thumb">
+        <input type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
+        <button type="submit" class="search-btn">
+          <svg width="25px" height="25px" class="icon-search">
+            <use href="./images/sprite.svg#icon-search" class="icon-search"></use>
+          </svg>
+        </button>
+      </div>
+    </form>
+    <div class="gallery">
+      <!-- Картки зображень -->
+    </div>
+
+  </main>
   <script src="index.js" type="module"></script>
 </body>
+<button type="button" class="load-more hidden">Load more</button>
 
 </html>

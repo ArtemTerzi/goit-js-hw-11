@@ -1,1 +1,33 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  align-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+body {
+  font-family: 'Roboto', 'Open Sans';
+}
+
+main {
+  position: relative;
+}
