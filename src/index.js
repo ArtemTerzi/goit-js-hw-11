@@ -2,15 +2,8 @@ import './js/refs';
 import { Notify } from 'notiflix';
 import fetchData from './js/fetchData';
 import axios from 'axios';
-
-// const options = {
-//   method: 'GET',
-//   q: 'cat',
-//   key: '33730392-00e87f60b0c2dabc7d687ed2e',
-//   headers: {
-//     'Content-Type': 'application/json; charset=UTF-8',
-//   },
-// };
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 let page = 1;
 
@@ -28,6 +21,7 @@ refs.form.addEventListener('submit', e => {
       .then(markup => (refs.gallery.innerHTML = markup))
       .then(data => {
         if (data) refs.loadMoreBtn.classList.remove('hidden');
+        gallery.refresh();
       })
       .catch(error => console.error(error));
   }
@@ -46,7 +40,24 @@ refs.loadMoreBtn.addEventListener('click', e => {
     page += 1;
     fetchData(q, page)
       .then(markup => refs.gallery.insertAdjacentHTML('beforeend', markup))
-      .then(() => refs.loadMoreBtn.classList.remove('hidden'))
+      .then(data => {
+        refs.loadMoreBtn.classList.remove('hidden');
+        gallery.refresh();
+
+        const { height: cardHeight } = document
+          .querySelector('.gallery')
+          .firstElementChild.getBoundingClientRect();
+
+        window.scrollBy({
+          top: cardHeight * 2,
+          behavior: 'smooth',
+        });
+      })
       .catch(error => console.error(error));
   }
+});
+
+let gallery = new SimpleLightbox(`.gallery a`, {
+  captionsData: 'alt',
+  captionDelay: 250,
 });

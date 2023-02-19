@@ -1,5 +1,9 @@
 import createCard from './createCard';
 import { Notify } from 'notiflix';
+import axios from 'axios';
+
+//TODO Need to add axios
+axios.defaults.baseURL = 'https://pixabay.com';
 
 export default function fetchData(q, page) {
   return fetch(

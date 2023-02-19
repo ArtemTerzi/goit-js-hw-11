@@ -7,7 +7,7 @@ export default function createCard({
   comments,
   downloads,
 }) {
-  return `<div class="photo-card">
+  return `<a href="${largeImageURL}"><div class="photo-card">
   <img src="${webformatURL}" alt="${tags}" loading="lazy" class="card-image" />
   <div class="info">
     <p class="info-item">
@@ -27,5 +27,5 @@ export default function createCard({
       ${downloads}
     </p>
   </div>
-</div>`;
+</div></a>`;
 }
