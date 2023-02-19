@@ -26,7 +26,6 @@ export default async function FetchData(q, page) {
   if (page === 1 && data.total)
     Notify.success(`Hooray! We found ${data.totalHits} images.`);
 
-  console.log(data);
   if (data.hits == 0 && data.total) {
     Notify.failure(
       "We're sorry, but you've reached the end of search results."
