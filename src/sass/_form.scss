@@ -21,6 +21,7 @@
     width: 450px;
     padding-left: 10px;
     border: transparent;
+    border-radius: 12px;
   }
 
   & > button {
@@ -34,6 +35,9 @@
     width: 40px;
     height: 40px;
     border: transparent;
+
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
 
     cursor: pointer;
 
