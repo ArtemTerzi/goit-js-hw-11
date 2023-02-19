@@ -9,7 +9,7 @@ let page = 1;
 
 refs.form.addEventListener('submit', e => {
   e.preventDefault();
-  const q = refs.input.value;
+  const q = refs.input.value.trim();
   page = 1;
 
   if (q === '') {
