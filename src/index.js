@@ -1,4 +1,4 @@
-import './js/refs';
+import refs from './js/refs';
 import { Notify } from 'notiflix';
 import fetchData from './js/fetchData';
 import SimpleLightbox from 'simplelightbox';
